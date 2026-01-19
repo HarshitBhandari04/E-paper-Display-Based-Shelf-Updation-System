@@ -1,80 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>E-paper Display Based Shelf Updation System</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            margin: 0;
-            background-color: #f4f6f8;
-            color: #333;
-            line-height: 1.6;
-        }
-        header {
-            background: #1e293b;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 26px;
-        }
-        .container {
-            max-width: 1100px;
-            margin: auto;
-            padding: 20px;
-        }
-        section {
-            background: #ffffff;
-            margin-bottom: 20px;
-            padding: 20px;
-            border-radius: 6px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        section h2 {
-            margin-top: 0;
-            color: #1e293b;
-            border-bottom: 2px solid #e5e7eb;
-            padding-bottom: 8px;
-        }
-        ul {
-            padding-left: 20px;
-        }
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 20px;
-        }
-        .diagram {
-            text-align: center;
-        }
-        .diagram img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 6px;
-            border: 1px solid #ddd;
-            margin-bottom: 8px;
-        }
-        .diagram p {
-            font-size: 14px;
-            color: #555;
-        }
-        footer {
-            text-align: center;
-            padding: 15px;
-            background: #1e293b;
-            color: #fff;
-            font-size: 14px;
-        }
-    </style>
+<meta charset="UTF-8">
+<title>E-paper Display Shelf Updation System</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+/* ===== FONT ===== */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    background: linear-gradient(120deg,#0f2027,#203a43,#2c5364);
+    color: #f0f0f0;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+/* ===== HEADER ===== */
+header {
+    background: #111827;
+    color: #00ffe0;
+    padding: 2rem 1rem;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,255,224,0.3);
+}
+header h1 {
+    margin: 0;
+    font-size: 2.2rem;
+    letter-spacing: 1px;
+}
+header p {
+    font-size: 1rem;
+    color: #a0f0e0;
+}
+
+/* ===== CONTAINER ===== */
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 2rem 1rem;
+}
+
+/* ===== SECTION CARDS ===== */
+section {
+    background: rgba(255,255,255,0.05);
+    margin-bottom: 2rem;
+    padding: 1.8rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,255,224,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0,255,224,0.3);
+}
+
+section h2 {
+    margin-top: 0;
+    color: #00ffe0;
+    border-bottom: 2px solid rgba(0,255,224,0.3);
+    padding-bottom: 6px;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+/* ===== LISTS ===== */
+ul {
+    padding-left: 1.5rem;
+    list-style-type: disc;
+}
+ul li {
+    margin-bottom: 0.6rem;
+}
+
+/* ===== GRID ===== */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+    gap: 1.5rem;
+}
+
+/* ===== DIAGRAM CARDS ===== */
+.diagram {
+    text-align: center;
+    background: rgba(0,255,224,0.05);
+    border-radius: 12px;
+    padding: 1rem;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.diagram:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0,255,224,0.4);
+}
+.diagram img {
+    max-width: 100%;
+    border-radius: 10px;
+    border: 1px solid rgba(0,255,224,0.2);
+    margin-bottom: 0.5rem;
+    transition: transform 0.3s;
+}
+.diagram p {
+    font-size: 0.9rem;
+    color: #a0f0e0;
+}
+
+/* ===== LIGHTBOX / MODAL ===== */
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+.lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 12px;
+    box-shadow: 0 0 30px #00ffe0;
+}
+.lightbox:target {
+    display: flex;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    background: #111827;
+    color: #00ffe0;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+
+/* ===== LINKS ===== */
+a {
+    color: #00ffe0;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+a:hover {
+    color: #00a5a0;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:600px){
+    section { padding: 1rem; }
+}
+</style>
 </head>
 <body>
 
 <header>
-    <h1>E-paper-Display-Based-Shelf-Updation-System</h1>
+    <h1>E-paper Display Shelf Updation System</h1>
     <p>Low-power Wireless Shelf Label Management</p>
 </header>
 
@@ -83,20 +167,19 @@
     <section>
         <h2>📌 Project Overview</h2>
         <p>
-            This project focuses on designing and implementing a low-power, wireless shelf updation
-            system using E-paper displays. The system enables efficient and reliable shelf label updates
-            through BLE communication, with a BeagleBone Black (BBB) acting as a gateway.
+            Designing a low-power, wireless shelf updation system with E-paper displays.  
+            Efficient, reliable updates via BLE with BeagleBone Black as gateway.
         </p>
     </section>
 
     <section>
         <h2>🎯 Project Objectives</h2>
         <ul>
-            <li>Enable remote and wireless shelf label updates</li>
-            <li>Optimize power consumption for long-term operation</li>
-            <li>Ensure reliable communication between devices and gateway</li>
-            <li>Provide a scalable architecture for multiple shelf nodes</li>
-            <li>Support future upgrades such as OTA and environment monitoring</li>
+            <li>Remote and wireless shelf label updates</li>
+            <li>Optimized power consumption</li>
+            <li>Reliable device-to-gateway communication</li>
+            <li>Scalable multi-node architecture</li>
+            <li>Future upgrades: OTA & environment monitoring</li>
         </ul>
     </section>
 
@@ -107,8 +190,8 @@
                 <h3>Hardware</h3>
                 <ul>
                     <li>E-paper Display</li>
-                    <li>ESP32 Microcontroller Unit (MCU)</li>
-                    <li>BeagleBone Black (Gateway)</li>
+                    <li>ESP32 MCU</li>
+                    <li>BeagleBone Black Gateway</li>
                 </ul>
             </div>
             <div>
@@ -116,48 +199,53 @@
                 <ul>
                     <li>Display Interface Library</li>
                     <li>BLE Communication</li>
-                    <li>MQTT Protocol (Device ↔ Gateway)</li>
-                    <li>Flash Memory for Data Storage</li>
+                    <li>MQTT Protocol</li>
+                    <li>Flash Memory Storage</li>
                     <li>Interrupt-based Event Handling</li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <!-- NEW DIAGRAM SECTION -->
     <section>
         <h2>📐 System Block & Sequence Diagrams</h2>
         <div class="grid">
 
-            <div class="diagram">
+            <!-- 1. System Block -->
+            <a href="#img1" class="diagram">
                 <img src="https://raw.githubusercontent.com/HarshitBhandari04/E-paper-Display-Based-Shelf-Updation-System/main/diagram/system.png" alt="System Block Diagram">
-                <p><strong>System Block Diagram</strong></p>
-            </div>
+                <p>System Block Diagram</p>
+            </a>
 
-            <div class="diagram">
-                <img src="https://raw.githubusercontent.com/HarshitBhandari04/E-paper-Display-Based-Shelf-Updation-System/main/diagram/update_seq.png" alt="Update Sequence Diagram">
-                <p><strong>Shelf Update Sequence</strong></p>
-            </div>
-
-            <div class="diagram">
-                <img src="https://raw.githubusercontent.com/HarshitBhandari04/E-paper-Display-Based-Shelf-Updation-System/main/diagram/alert_seq.png" alt="Alert Sequence Diagram">
-                <p><strong>Alert & Notification Sequence</strong></p>
-            </div>
-
-            <div class="diagram">
-                <img src="https://raw.githubusercontent.com/HarshitBhandari04/E-paper-Display-Based-Shelf-Updation-System/main/diagram/esp32.png" alt="ESP32 Node Diagram">
-                <p><strong>ESP32 Shelf Node</strong></p>
-            </div>
-
-            <div class="diagram">
+            <!-- 2. Gateway -->
+            <a href="#img2" class="diagram">
                 <img src="https://raw.githubusercontent.com/HarshitBhandari04/E-paper-Display-Based-Shelf-Updation-System/main/diagram/gateway.png" alt="Gateway Diagram">
-                <p><strong>BeagleBone Black Gateway</strong></p>
-            </div>
+                <p>BeagleBone Black Gateway</p>
+            </a>
 
-            <div class="diagram">
+            <!-- 3. Cloud -->
+            <a href="#img3" class="diagram">
                 <img src="https://raw.githubusercontent.com/HarshitBhandari04/E-paper-Display-Based-Shelf-Updation-System/main/diagram/cloud.png" alt="Cloud Architecture">
-                <p><strong>Cloud & MQTT Architecture</strong></p>
-            </div>
+                <p>Cloud & MQTT Architecture</p>
+            </a>
+
+            <!-- 4. ESP32 Shelf -->
+            <a href="#img4" class="diagram">
+                <img src="https://raw.githubusercontent.com/HarshitBhandari04/E-paper-Display-Based-Shelf-Updation-System/main/diagram/esp32.png" alt="ESP32 Node Diagram">
+                <p>ESP32 Shelf Node</p>
+            </a>
+
+            <!-- 5. Shelf Update Sequence -->
+            <a href="#img5" class="diagram">
+                <img src="https://raw.githubusercontent.com/HarshitBhandari04/E-paper-Display-Based-Shelf-Updation-System/main/diagram/update_seq.png" alt="Update Sequence Diagram">
+                <p>Shelf Update Sequence</p>
+            </a>
+
+            <!-- 6. Alert Sequence -->
+            <a href="#img6" class="diagram">
+                <img src="https://raw.githubusercontent.com/HarshitBhandari04/E-paper-Display-Based-Shelf-Updation-System/main/diagram/alert_seq.png" alt="Alert Sequence Diagram">
+                <p>Alert & Notification Sequence</p>
+            </a>
 
         </div>
     </section>
@@ -165,11 +253,11 @@
     <section>
         <h2>⚙️ Key Features</h2>
         <ul>
-            <li>Low-power E-paper display updates</li>
-            <li>BLE-based communication</li>
-            <li>Event-driven architecture using interrupts</li>
-            <li>Structured data format for display updates</li>
-            <li>Flash memory usage instead of file system</li>
+            <li>Low-power E-paper updates</li>
+            <li>BLE communication</li>
+            <li>Event-driven architecture</li>
+            <li>Structured data format</li>
+            <li>Flash memory usage</li>
             <li>MQTT-based gateway communication</li>
         </ul>
     </section>
@@ -177,20 +265,27 @@
     <section>
         <h2>📊 Feasibility & Constraints</h2>
         <ul>
-            <li>Designed to be completed within the given academic timeline</li>
-            <li>Focus on reliability and power efficiency</li>
-            <li>Optional features implemented only if time permits</li>
-            <li>Optional OTA updates (time permitting)</li>
-            <li>Environment monitoring for safety and mishap prevention</li>
+            <li>Academic timeline-friendly</li>
+            <li>Reliability & power efficiency</li>
+            <li>Optional features if time permits</li>
+            <li>OTA updates (optional)</li>
+            <li>Environment monitoring for safety</li>
         </ul>
     </section>
 
 </div>
 
 <footer>
-    <p>© 2026 E-paper Display Based Shelf Updation System</p>
+    © 2026 E-paper Display Shelf Updation System
 </footer>
+
+<!-- ===== LIGHTBOX MODALS ===== -->
+<div id="img1" class="lightbox"><a href="#"><img src="https://raw.githubusercontent.com/HarshitBhandari04/E-paper-Display-Based-Shelf-Updation-System/main/diagram/system.png"></a></div>
+<div id="img2" class="lightbox"><a href="#"><img src="https://raw.githubusercontent.com/HarshitBhandari04/E-paper-Display-Based-Shelf-Updation-System/main/diagram/gateway.png"></a></div>
+<div id="img3" class="lightbox"><a href="#"><img src="https://raw.githubusercontent.com/HarshitBhandari04/E-paper-Display-Based-Shelf-Updation-System/main/diagram/cloud.png"></a></div>
+<div id="img4" class="lightbox"><a href="#"><img src="https://raw.githubusercontent.com/HarshitBhandari04/E-paper-Display-Based-Shelf-Updation-System/main/diagram/esp32.png"></a></div>
+<div id="img5" class="lightbox"><a href="#"><img src="https://raw.githubusercontent.com/HarshitBhandari04/E-paper-Display-Based-Shelf-Updation-System/main/diagram/update_seq.png"></a></div>
+<div id="img6" class="lightbox"><a href="#"><img src="https://raw.githubusercontent.com/HarshitBhandari04/E-paper-Display-Based-Shelf-Updation-System/main/diagram/alert_seq.png"></a></div>
 
 </body>
 </html>
-
