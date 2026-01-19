@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>E-paper Display Based Shelf Updation System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            background-color: #f4f6f8;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background: #1e293b;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 26px;
+        }
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 20px;
+        }
+        section {
+            background: #ffffff;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 6px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        section h2 {
+            margin-top: 0;
+            color: #1e293b;
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 8px;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
+        .diagram {
+            text-align: center;
+        }
+        .diagram img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+            border: 1px solid #ddd;
+            margin-bottom: 8px;
+        }
+        .diagram p {
+            font-size: 14px;
+            color: #555;
+        }
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: #1e293b;
+            color: #fff;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>E-paper-Display-Based-Shelf-Updation-System</h1>
+    <p>Low-power Wireless Shelf Label Management</p>
+</header>
+
+<div class="container">
+
+    <section>
+        <h2>📌 Project Overview</h2>
+        <p>
+            This project focuses on designing and implementing a low-power, wireless shelf updation
+            system using E-paper displays. The system enables efficient and reliable shelf label updates
+            through BLE communication, with a BeagleBone Black (BBB) acting as a gateway.
+        </p>
+    </section>
+
+    <section>
+        <h2>🎯 Project Objectives</h2>
+        <ul>
+            <li>Enable remote and wireless shelf label updates</li>
+            <li>Optimize power consumption for long-term operation</li>
+            <li>Ensure reliable communication between devices and gateway</li>
+            <li>Provide a scalable architecture for multiple shelf nodes</li>
+            <li>Support future upgrades such as OTA and environment monitoring</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>🧩 System Components</h2>
+        <div class="grid">
+            <div>
+                <h3>Hardware</h3>
+                <ul>
+                    <li>E-paper Display</li>
+                    <li>ESP32 Microcontroller Unit (MCU)</li>
+                    <li>BeagleBone Black (Gateway)</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Software & Communication</h3>
+                <ul>
+                    <li>Display Interface Library</li>
+                    <li>BLE Communication</li>
+                    <li>MQTT Protocol (Device ↔ Gateway)</li>
+                    <li>Flash Memory for Data Storage</li>
+                    <li>Interrupt-based Event Handling</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW DIAGRAM SECTION -->
+    <section>
+        <h2>📐 System Block & Sequence Diagrams</h2>
+        <div class="grid">
+
+            <div class="diagram">
+                <img src="https://raw.githubusercontent.com/HarshitBhandari04/E-paper-Display-Based-Shelf-Updation-System/main/diagram/system.png" alt="System Block Diagram">
+                <p><strong>System Block Diagram</strong></p>
+            </div>
+
+            <div class="diagram">
+                <img src="https://raw.githubusercontent.com/HarshitBhandari04/E-paper-Display-Based-Shelf-Updation-System/main/diagram/update_seq.png" alt="Update Sequence Diagram">
+                <p><strong>Shelf Update Sequence</strong></p>
+            </div>
+
+            <div class="diagram">
+                <img src="https://raw.githubusercontent.com/HarshitBhandari04/E-paper-Display-Based-Shelf-Updation-System/main/diagram/alert_seq.png" alt="Alert Sequence Diagram">
+                <p><strong>Alert & Notification Sequence</strong></p>
+            </div>
+
+            <div class="diagram">
+                <img src="https://raw.githubusercontent.com/HarshitBhandari04/E-paper-Display-Based-Shelf-Updation-System/main/diagram/esp32.png" alt="ESP32 Node Diagram">
+                <p><strong>ESP32 Shelf Node</strong></p>
+            </div>
+
+            <div class="diagram">
+                <img src="https://raw.githubusercontent.com/HarshitBhandari04/E-paper-Display-Based-Shelf-Updation-System/main/diagram/gateway.png" alt="Gateway Diagram">
+                <p><strong>BeagleBone Black Gateway</strong></p>
+            </div>
+
+            <div class="diagram">
+                <img src="https://raw.githubusercontent.com/HarshitBhandari04/E-paper-Display-Based-Shelf-Updation-System/main/diagram/cloud.png" alt="Cloud Architecture">
+                <p><strong>Cloud & MQTT Architecture</strong></p>
+            </div>
+
+        </div>
+    </section>
+
+    <section>
+        <h2>⚙️ Key Features</h2>
+        <ul>
+            <li>Low-power E-paper display updates</li>
+            <li>BLE-based communication</li>
+            <li>Event-driven architecture using interrupts</li>
+            <li>Structured data format for display updates</li>
+            <li>Flash memory usage instead of file system</li>
+            <li>MQTT-based gateway communication</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>📊 Feasibility & Constraints</h2>
+        <ul>
+            <li>Designed to be completed within the given academic timeline</li>
+            <li>Focus on reliability and power efficiency</li>
+            <li>Optional features implemented only if time permits</li>
+            <li>Optional OTA updates (time permitting)</li>
+            <li>Environment monitoring for safety and mishap prevention</li>
+        </ul>
+    </section>
+
+</div>
+
+<footer>
+    <p>© 2026 E-paper Display Based Shelf Updation System</p>
+</footer>
+
+</body>
+</html>
+
