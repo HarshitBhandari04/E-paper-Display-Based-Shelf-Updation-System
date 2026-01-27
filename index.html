@@ -121,11 +121,10 @@ h2{
   padding:30px;
 }
 
-/* subtle reveal animation */
 .reveal{
   opacity:0;
   transform:translateY(24px);
-  transition:0.6s ease;
+  transition:.6s ease;
 }
 .reveal.show{
   opacity:1;
@@ -294,7 +293,7 @@ footer{
 </div>
 
 <script>
-/* reveal on scroll */
+/* reveal animation */
 const observer=new IntersectionObserver(e=>{
   e.forEach(i=>i.isIntersecting&&i.target.classList.add('show'))
 },{threshold:.2});
@@ -303,16 +302,22 @@ document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 /* fullscreen image viewer */
 const viewer=document.getElementById('viewer');
 const viewerImg=document.getElementById('viewerImg');
+
 document.querySelectorAll('.image-card img').forEach(img=>{
   img.onclick=()=>{
     viewer.style.display='flex';
     viewerImg.src=img.src;
   }
 });
-function closeViewer(){viewer.style.display='none'}
+
+function closeViewer(){
+  viewer.style.display='none';
+}
+
 document.addEventListener('keydown',e=>{
   if(e.key==='Escape') closeViewer();
 });
+
 viewer.addEventListener('click',e=>{
   if(e.target===viewer) closeViewer();
 });
