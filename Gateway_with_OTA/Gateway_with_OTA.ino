@@ -212,8 +212,11 @@ void handleAdmin() {
   h += "SSID<input name='s' value='"+staSSID+"'>";
   h += "Password<input name='p' type='password'>";
   h += "<button class='btn' style='background:#d33'>REBOOT & APPLY</button></form></div></div></body></html>";
-  server.send(200, "text/html", h);
+  server.send(200, "text/html", h);void setup() {
+  // put your setup code here, to run once:
+
 }
+
 
 //Data Logic
 void saveData() {
