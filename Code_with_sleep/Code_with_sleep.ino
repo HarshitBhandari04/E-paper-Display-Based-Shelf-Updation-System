@@ -23,6 +23,8 @@
 #define DC   22
 #define RST  21
 #define BUSY 4
+#define CLK  18
+#define DIN  23
 
 //DISPLAY DRIVER
 GxEPD2_BW<GxEPD2_290_T94, GxEPD2_290_T94::HEIGHT> display(
