@@ -125,26 +125,20 @@ When shelf-send = 1, the gateway:
 
 **🔮 Future Scope & Enhancements**
 
-   - Multi‑Label Network Support  
+    1.Multi‑Label Network Support  
     Expand to hundreds of shelf labels with grouping and hierarchical control.
-
-   - Battery Monitoring & Alerts  
+    2.Battery Monitoring & Alerts  
     Add voltage sensing + MQTT alerts for low battery replacement.
-
-    -BLE Security & Encryption  
+    3.BLE Security & Encryption  
     Implement secure pairing and encrypted payloads for data integrity.
-
-    -Cloud Analytics Integration  
+    4.Cloud Analytics Integration  
     Push sales and inventory data to cloud dashboards (AWS IoT, ThingsBoard, Azure IoT).
-
-   - Mobile App Companion  
+    5.Mobile App Companion  
     Android/iOS app for quick product updates and monitoring.
-
-   - QR/Barcode Integration  
+    6.QR/Barcode Integration  
     Scan product codes to auto‑update shelf labels.
-
-    -AI‑Driven Dynamic Pricing  
+    7.AI‑Driven Dynamic Pricing  
     Integrate with backend systems to adjust prices in real time based on demand.
-   ** ✅ Conclusion**
-
+    
+   **Conclusion**
 This ESL system demonstrates a scalable, low‑power, and cost‑effective IoT solution for smart retail. With BLE updates, MQTT integration, OTA support, and a web dashboard, it bridges embedded systems with cloud IoT. Future improvements will make it enterprise‑ready, secure, and analytics‑driven.
