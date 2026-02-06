@@ -123,22 +123,5 @@ When shelf-send = 1, the gateway:
 -Admin pages require authentication
 -Wi-Fi credentials stored securely in NVS
 
-**🔮 Future Scope & Enhancements**
-
-    1.Multi‑Label Network Support  
-    Expand to hundreds of shelf labels with grouping and hierarchical control.
-    2.Battery Monitoring & Alerts  
-    Add voltage sensing + MQTT alerts for low battery replacement.
-    3.BLE Security & Encryption  
-    Implement secure pairing and encrypted payloads for data integrity.
-    4.Cloud Analytics Integration  
-    Push sales and inventory data to cloud dashboards (AWS IoT, ThingsBoard, Azure IoT).
-    5.Mobile App Companion  
-    Android/iOS app for quick product updates and monitoring.
-    6.QR/Barcode Integration  
-    Scan product codes to auto‑update shelf labels.
-    7.AI‑Driven Dynamic Pricing  
-    Integrate with backend systems to adjust prices in real time based on demand.
-    
-   **Conclusion**
+**Conclusion**
 This ESL system demonstrates a scalable, low‑power, and cost‑effective IoT solution for smart retail. With BLE updates, MQTT integration, OTA support, and a web dashboard, it bridges embedded systems with cloud IoT. Future improvements will make it enterprise‑ready, secure, and analytics‑driven.
